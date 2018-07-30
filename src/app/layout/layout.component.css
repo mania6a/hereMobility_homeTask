@@ -1,0 +1,55 @@
+.container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+.players{
+  display: flex;
+  width: 300px;
+}
+.row{
+  width: 100%;
+  display: flex;
+}
+
+.cell{
+  width: 100px;
+  height: 100px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-size: xx-large;
+}
+.cell:first-child, .cell:nth-child(2){
+  border-right: 1px solid gray;
+}
+.row:first-child, .row:nth-child(2){
+  border-bottom: 1px solid gray;
+}
+button{
+  margin-top: 3vmin;
+}
+.player{
+  flex-grow: 1;
+  text-align: left;
+  color: darkgray;
+}
+.active{
+  font-weight: 700;
+  color: black;
+}
+.invis{
+  visibility: hidden;
+}
+.result{
+  position: absolute;
+  z-index: 999;
+  animation: res;
+  animation-duration: 500ms;
+}
+@keyframes res {
+  from {font-size: 0pt}
+  to {font-size: inherit}
+}

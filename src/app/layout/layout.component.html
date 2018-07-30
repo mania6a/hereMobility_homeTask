@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="players">
+    <p class="player" [ngClass]="{'active': userX.isGoing}">Player X: {{userX.name}}</p>
+    <p class="player" [ngClass]="{'active': user0.isGoing}">Player 0: {{user0.name}}</p>
+  </div>
+  <div class="field" [ngClass]="{'invis' : winner || stepNumber === 9}">
+    <div class="row" *ngFor="let row of cells; let indRow = index">
+      <div class="cell" *ngFor="let cell of cells; let indCell = index"
+           (click)="onCellClick(indRow, indCell, $event)" [id]="setId(indRow, indCell)"></div>
+    </div>
+  </div>
+  <div class="field result" *ngIf="winner || stepNumber === 9">
+    <h1 *ngIf="winner">Winner is {{winner}}!</h1>
+    <h1 *ngIf="stepNumber === 9">Drawn game!</h1>
+  </div>
+  <button *ngIf="!isReset" mat-raised-button (click)="openDialog()" color="primary">Let's start</button>
+  <button *ngIf="isReset" mat-raised-button (click)="reset()" color="primary">Reset</button>
+</div>

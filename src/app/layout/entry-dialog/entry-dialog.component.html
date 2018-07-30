@@ -1,0 +1,13 @@
+<div>
+  <form [formGroup]="form">
+    <h2>Enter player X name</h2>
+    <mat-form-field>
+    <input type="text" matInput formControlName="nameX" maxlength="10">
+    </mat-form-field>
+    <h2>Enter player 0 name</h2>
+    <mat-form-field>
+    <input type="text" matInput formControlName="name0" maxlength="10">
+    </mat-form-field><br>
+  <button [disabled]="form.invalid" mat-raised-button color="primary" (click)="closeDialog()">Confirm</button>
+  </form>
+</div>
